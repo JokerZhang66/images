@@ -1,0 +1,54 @@
+Host Ubantu_LTS
+  HostName 101.33.213.197
+  User zhangfp
+  IdentityFile C:\Users\15270\.ssh\zhangfp_id_rsa
+  Port 55524
+
+# root用户已禁止登录,其他用户可用ssh登录或密钥登录
+Host tencent_root
+  HostName 101.33.213.197
+  IdentityFile C:\Users\15270\.ssh\root_id_rsa
+  User root
+  Port 55524
+
+Host Ubuntu_git
+  HostName 101.33.213.197
+  # IdentityFile ~/.ssh/id_rsa_github
+  User git
+  Port 55524
+
+# gitee
+Host gitee.com
+HostName gitee.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa_gitee
+
+# github
+Host github.com
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa_github
+
+# acgit
+Host git.acwing.com
+  HostName git.acwing.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa_acgit
+
+
+# gitea
+Host git.bnblogs.cc
+  HostName git.bnblogs.cc
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa_gitea
+
+
+# 博客的ssh连接
+Host 101.33.213.197
+  HostName 101.33.213.197
+  Port 55524
+  # UseKeychain yes
+  #此处是开启git的ssh翻墙代理
+  # ProxyCommand /usr/bin/nc -X 5 -x 127.0.0.1:1217 %h %p
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa_github
